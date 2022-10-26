@@ -26,7 +26,7 @@ body {
 }
 
 .container {
-  height: 100vh;
+  /* height: 100vh; */
   display: block;
   margin-top: 1.5rem;
 }
@@ -49,7 +49,6 @@ body {
 }
 
 .card-container {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,3 +1,17 @@
-export * from './Card.exercise'
+import React from 'react'
+import {nftType} from '../../types/types'
+import {CardContent} from './CardContent'
+import {CardImage} from './CardImage'
 
-//export * from "./Card.final";
+type CardProps = {
+  nft: nftType
+}
+const Card = ({nft}: CardProps) => {
+  return (
+    <section className="main-card">
+      <CardImage imgSrc={nft.img} />
+      <CardContent nft={nft} />
+    </section>
+  )
+}
+export {Card}

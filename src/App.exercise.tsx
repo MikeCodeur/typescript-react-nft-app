@@ -1,31 +1,81 @@
-import React from "react";
-// ⛏️ supprime l'import du logo
-import logo from "./logo.svg";
-// ⛏️ supprime l'import de CSS'
-import "./App.css";
-// 🐶 importe css/styles.css
+import React from 'react'
+import './css/styles.css'
 
+// 🐶 Deplace le HTML dans  les composants tel que 'App' puisse etre comme ceci
+// <MainContainer>
+//   <Search />
+//   <CardsContainer>
+//     <Card />
+//   </CardsContainer>
+//   <Footer />
+// </MainContainer>
 function App() {
   return (
-    // ⛏️ supprime le rendu du composant App
-    // remplace le par notre code HTML de l'application vanilla
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+    <div>
+      <main className="container">
+        <input type="text" className="input-search" />
+        <div className="card-container">
+          <section className="main-card">
+            <div className="image-container">
+              <img
+                src="images/image-equilibrium.jpg"
+                alt="nft"
+                className="main-image"
+              />
+              <div className="overlay"></div>
+              <img
+                src="images/icon-view.svg"
+                alt="view icon"
+                className="view"
+              />
+            </div>
+            <div className="text-container">
+              <h1 className="title">Equilibrium #3429</h1>
+              <p className="description">
+                Our Equilibrium collection promotes balance and calm.
+              </p>
+              <div className="eth-info">
+                <div className="info">
+                  <img
+                    src="images/icon-ethereum.svg"
+                    alt="ETH"
+                    className="icon"
+                  />
+                  <span className="eth">0.065 ETH</span>
+                </div>
+                <div className="info">
+                  <img
+                    src="images/icon-clock.svg"
+                    alt="clock"
+                    className="icon"
+                  />
+                  <span className="expire">3 days left</span>
+                </div>
+              </div>
+              <div className="creator-info">
+                <img
+                  src="images/image-avatar.png"
+                  alt="Jules Wyvern"
+                  className="avatar"
+                />
+                <p className="creator-text">
+                  Creation of <span className="creator-name">Jules Wyvern</span>
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer className="attribution">
+        Formation TypeScript
+        <a href="https://www.mikecodeur.com" target="_blank" rel="noreferrer">
+          Mike Codeur
         </a>
-      </header>
+        .
+      </footer>
     </div>
-  );
+  )
 }
 
-export { App };
+export {App}

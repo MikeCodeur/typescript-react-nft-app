@@ -1,3 +1,7 @@
-export * from './Search.exercise'
+import React from 'react'
 
-//export * from "./Search.final";
+const Search = () => {
+  return <input type="text" className="input-search" />
+}
+
+export {Search}

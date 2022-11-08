@@ -1,0 +1,20 @@
+import React from 'react'
+import {nftType} from '../../types/types'
+import {CardCreator} from './CardCreator.final'
+import {CardCrypto} from './CardCrypto.final'
+
+type CardContentProps = {
+  nft: nftType
+}
+const CardContent = ({nft}: CardContentProps) => {
+  const {title, description} = nft
+  return (
+    <div className="text-container">
+      <h1 className="title">{title}</h1>
+      <p className="description">{description}</p>
+      <CardCrypto nft={nft} />
+      <CardCreator nft={nft} />
+    </div>
+  )
+}
+export {CardContent}

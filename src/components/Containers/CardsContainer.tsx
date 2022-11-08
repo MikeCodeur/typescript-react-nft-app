@@ -1,5 +1,11 @@
-export * from './CardsContainer.exercise'
+import React from 'react'
 
-//export * from "./CardsContainer.final";
+type CardsContainerProps = {
+  children: React.ReactNode
+}
 
-//export * from './CardsContainer.bonus-1'
+const CardsContainer = ({children}: CardsContainerProps) => {
+  return <div className="card-container">{children}</div>
+}
+
+export {CardsContainer}

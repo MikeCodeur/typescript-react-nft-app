@@ -1,5 +1,10 @@
-export * from './MainContainer.exercise'
+import React from 'react'
 
-//export * from "./MainContainer.final";
+type MainContainerProps = {
+  children: React.ReactNode
+}
 
-//export * from './MainContainer.bonus-1'
+const MainContainer = ({children}: MainContainerProps) => {
+  return <main className="container">{children}</main>
+}
+export {MainContainer}

@@ -2,29 +2,38 @@ import React from 'react'
 import './css/styles.css'
 
 import {Card} from './components/Card/Card'
-import {Search} from './components/Search/Search.exercise'
+import {Search} from './components/Search/Search'
 import {Footer} from './components/Footer/Footer'
 import {MainContainer} from './components/Containers/MainContainer'
 import {CardsContainer} from './components/Containers/CardsContainer'
+// ⛏️ supprime 'nftsList', les données viennent d'API
 import {nftsList} from './db/nft'
-// 🐶 importe le type 'nftType' nous allons typer les states et props avec
-// 🤖 import {nftType} from './types/types'
+import {nftType} from './types/types'
 
 function App() {
-  // comme la liste de nft va etre filtrer et mise à jour dans l'écran
-  // nous devons passe par un state contenant nos nft
-  // 🐶 créé un state 'nfts' de nftType[] (un array de nft)
-
-  // 🐶 créé une fonction fléchée 'handleChange', elle doit avoir la meme signature
-  // que celle de 'Search'
-  // reprend la meme implementation que dans le projet vanilla
+  // 🐶 créé un state 'nftsApi' qui contiendra les données venant de l'api
+  const [nfts, setNfts] = React.useState<nftType[]>(nftsList)
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value)
+    const value = e.target.value
+    const filteredList = nftsList.filter(nft => {
+      return (
+        nft.title.toLowerCase()?.includes(value.toLowerCase()) ||
+        nft.description.toLowerCase().includes(value.toLowerCase()) ||
+        nft.creator.toLowerCase().includes(value.toLowerCase())
+      )
+    })
+    setNfts(filteredList)
+  }
+  // 🐶 utilise le Hook useEffect pour
+  // - faire un fetch avec la methode GET
+  // - ressource : https://636b20b6c07d8f936dae7fe4.mockapi.io/api/nft/all
+  // - met les data dans 'nftsApi'
   return (
     <MainContainer>
-      {/*  🐶 passe le prop 'handleChange' */}
-      <Search />
+      <Search onChange={handleChange} />
       <CardsContainer>
-        {/*  ⛏️ remplace 'nftsList' */}
-        {nftsList.map((nft, idx) => (
+        {nfts.map((nft, idx) => (
           <Card key={idx} nft={nft} />
         ))}
       </CardsContainer>

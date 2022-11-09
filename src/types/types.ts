@@ -6,4 +6,6 @@ export type nftType = {
   price: string
   expire: string
   avatar: string
+  fetchedAt?: string
+  createdAt?: string
 }

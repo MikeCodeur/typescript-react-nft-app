@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
 
 :root {
   --bg-main: hsl(217, 54%, 11%);
@@ -19,7 +19,7 @@
 /* Project Styles */
 body {
   background-color: var(--bg-main);
-  font-family: "Outfit", sans-serif;
+  font-family: 'Outfit', sans-serif;
   color: var(--colour-blue);
   font-weight: 300;
   line-height: 1.6;
@@ -191,6 +191,17 @@ body {
 
 .attribution a:hover {
   color: var(--colour-cyan);
+}
+.alert {
+  width: min(87.5%, 22rem);
+  margin-right: auto;
+  margin-left: auto;
+  color: red;
+}
+.elements {
+  width: min(87.5%, 22rem);
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /* Media Queries */

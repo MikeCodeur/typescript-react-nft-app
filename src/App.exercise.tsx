@@ -20,8 +20,10 @@ function App() {
   // reprend la meme implementation que dans le projet vanilla
   return (
     <MainContainer>
+      {/*  🐶 passe le prop 'handleChange' */}
       <Search />
       <CardsContainer>
+        {/*  ⛏️ remplace 'nftsList' */}
         {nftsList.map((nft, idx) => (
           <Card key={idx} nft={nft} />
         ))}

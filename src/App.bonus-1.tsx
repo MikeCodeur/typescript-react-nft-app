@@ -43,15 +43,15 @@ function App() {
           method: 'GET',
         },
       )
+      const {data, errors, elements}: JSONResponse = await resp.json()
       if (resp.ok) {
-        const {data, errors, elements}: JSONResponse = await resp.json()
         console.log(data)
         setNftsApi(data)
         setNfts(data)
         setErrors(errors)
         setElements(elements)
       } else {
-        setErrors([{message: 'API en erreur'}])
+        setErrors([{message: `API en erreur : code ${resp.status}`}])
         setNftsApi([])
         setNfts([])
         setElements(0)

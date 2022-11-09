@@ -38,20 +38,20 @@ function App() {
   React.useEffect(() => {
     const api = async () => {
       const resp = await fetch(
-        'https://636b20b6c07d8f936dae7fe4.mockapi.io/api/nft/all',
+        'https://636b20b6c07d8f936dae7fe4.mockapi.io/api/nft/error',
         {
           method: 'GET',
         },
       )
+      const {data, errors, elements}: JSONResponse = await resp.json()
       if (resp.ok) {
-        const {data, errors, elements}: JSONResponse = await resp.json()
         console.log(data)
         setNftsApi(data)
         setNfts(data)
         setErrors(errors)
         setElements(elements)
       } else {
-        setErrors([{message: 'API en erreur'}])
+        setErrors([{message: `API en erreur : code ${resp.status}`}])
         setNftsApi([])
         setNfts([])
         setElements(0)

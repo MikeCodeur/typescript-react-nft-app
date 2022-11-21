@@ -38,7 +38,7 @@ function App() {
   React.useEffect(() => {
     const api = async () => {
       const resp = await fetch(
-        'https://636b20b6c07d8f936dae7fe4.mockapi.io/api/nft/error',
+        'https://636b20b6c07d8f936dae7fe4.mockapi.io/api/nft/all',
         {
           method: 'GET',
         },

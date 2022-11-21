@@ -1,65 +1,52 @@
-# Custom Props Type
+# useState & React Event
 
-### 💡 Custom Props Type
+### 💡 useState & React Event
 
 ## 📝 Tes notes
 
-Détaille ce que tu as appris ici `src/exercise/03.md`ou sur une page [Notion](https://go.mikecodeur.com/course-notes-template)
+Detaille ce que tu as appris ici `src/exercise/04.md`ou sur une page [Notion](https://go.mikecodeur.com/course-notes-template)
 
 ## Comprendre
 
-Pour plus de simplicité nous avons déjà repris le type `NftType.ts` , la base de données `db/nft.ts` et nous avons découpé `Card` en plusieurs sous composants.
-
-- `CardImage`
-- `CardContent`
-  - `CardCreator`
-  - `CardCrypto`
+Il est possible de typer les states avec le hook `useState` avec les `generics` grace la syntaxe suivante `useState<string>`
 
 ```tsx
-const Card = () => {
-  return (
-    <section className="main-card">
-      <CardImage />
-      <CardContent />
-    </section>
-  );
+interface User {
+  id: string;
+  username: string;
+  email: string;
+}
+
+const currentUser: User = {
+  id: "my-id",
+  username: "Joe",
+  email: "joe@example.com",
 };
+
+const [user, setUser] = React.useState<User>(currentUser);
 ```
+
+Les events
+
+Il existe de nombreux types d’events géré avec React. Pour en citer quelques uns
+
+- `React.ChangeEvent`
+- `React.MouseEvent`
+- `React.SyntheticEvent`
+
+liste [des events](https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/forms_and_events/)
 
 ## Exercice
 
-Le but de cet exercice est de faire du prop drilling. C’est à dire de passer un `prop` de type `NftType` et de les passer aux sous composants.
+Dans cet exercice tu vois devoir gérer le cas ou l’on recherche des nft. Tu vas devoir gérer les events lors de la saisie dans le champs input du composant `Search,` faire remonté l'info au niveau de App et filtrer les NFT. Commence par le composant `Search`
 
-Pour passer un `prop` NFT au composant `Card` tu peux aller dans `App.tsx`
-
-```tsx
-//App.tsx
-
-import { nftsList } from "./db/nft";
-//nftsList[0] // le premier NFT
-```
-
-Fichiers :
+fichiers :
 
 - `src/App.tsx`
-- `src/components/Card/Card.tsx`
-- `src/components/Card/CardContent.tsx`
-- `src/components/Card/CardCreator.tsx`
-- `src/components/Card/CardCrypto.tsx`
-- `src/components/Card/CardImage.tsx`
+- `src/components/Search.tsx`
 
-## Bonus
-
-### 1. 🚀 Afficher tous les NFT
-
-Dans cet exercice tu vas devoir afficher tous les NFT
-
-utilise `.map` pour afficher tous les NFT
-
-Fichiers :
-
-- `src/App.tsx`
+##
 
 ## 🐜 Feedback
 
-Remplir le formulaire le [formulaire de FeedBack.](https://go.mikecodeur.com/cours-react-avis?entry.1912869708=TypeScript%20PRO&entry.1430994900=6.React%20TypeScript&entry.533578441=03%20Custom%20Props)
+Remplir le formulaire le [formulaire de FeedBack.](https://go.mikecodeur.com/cours-react-avis?entry.1912869708=TypeScript%20PRO&entry.1430994900=6.React%20TypeScript&entry.533578441=04%20State%20Event)

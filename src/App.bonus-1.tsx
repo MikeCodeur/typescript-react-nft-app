@@ -64,14 +64,15 @@ function App() {
   return (
     <MainContainer>
       <Search onChange={handleChange} />
-      {elements ?? -1 > 0 ? (
+      {elements ? (
         <div role={'alert'} className="elements">
           il y a {elements} element(s)
         </div>
       ) : null}
-      {errors?.length ?? -1 > 0 ? (
+
+      {errors?.length ? (
         <div role={'alert'} className="alert">
-          il y a {errors?.length} erreur(s) : {errors?.[0].message}
+          il y a {errors?.length} erreurs(s) : {errors?.[0].message}
         </div>
       ) : null}
       <CardsContainer>

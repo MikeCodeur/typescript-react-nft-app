@@ -10,6 +10,8 @@ const nftsList: nftType[] = [
     price: '0.341 ETH',
     expire: '10 days left',
     avatar: '/images/avatar/25.jpg',
+    createdAt: '2022-11-05T19:29:17.500Z',
+    fetchedAt: '2022-11-08T19:29:17.500Z',
   },
   {
     title: 'Dolly #1546',
@@ -19,6 +21,8 @@ const nftsList: nftType[] = [
     price: '0.041 ETH',
     expire: '3 days left',
     avatar: '/images/avatar/18.jpg',
+    createdAt: '2022-11-05T19:29:17.500Z',
+    fetchedAt: '2022-11-08T19:29:17.500Z',
   },
   {
     title: 'Makak #2643',
@@ -28,6 +32,8 @@ const nftsList: nftType[] = [
     price: '0.005 ETH',
     expire: '6 days left',
     avatar: '/images/avatar/50.jpg',
+    createdAt: '2022-11-05T19:29:17.500Z',
+    fetchedAt: '2022-11-08T19:29:17.500Z',
   },
   {
     title: 'Ouran #3434',
@@ -37,6 +43,8 @@ const nftsList: nftType[] = [
     price: '0.154 ETH',
     expire: '4 days left',
     avatar: '/images/avatar/85.jpg',
+    createdAt: '2022-11-05T19:29:17.500Z',
+    fetchedAt: '2022-11-08T19:29:17.500Z',
   },
   {
     title: 'Outan #9876',
@@ -47,6 +55,8 @@ const nftsList: nftType[] = [
     price: '0.099 ETH',
     expire: '27 days left',
     avatar: '/images/avatar/90.jpg',
+    createdAt: '2022-11-05T19:29:17.500Z',
+    fetchedAt: '2022-11-08T19:29:17.500Z',
   },
   {
     title: 'Dizzi #3856',
@@ -57,6 +67,8 @@ const nftsList: nftType[] = [
     price: '0.878 ETH',
     expire: '1 days left',
     avatar: '/images/avatar/90.jpg',
+    createdAt: '2022-11-05T19:29:17.500Z',
+    fetchedAt: '2022-11-08T19:29:17.500Z',
   },
 ]
 

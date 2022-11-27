@@ -123,7 +123,7 @@ pour faire tes tests utilise les 3 ressources ;
 
 </aside>
 
-### 3. 🚀 Omit
+### 2. 🚀 Omit
 
 Il arrive parfoit que les types retournés par le serveur soit generé automatiquement Et il y a parfois plus de données que necessaires. Exemple `fetchedAt` `createdAt`
 
